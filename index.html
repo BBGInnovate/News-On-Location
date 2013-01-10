@@ -1,92 +1,246 @@
-<!DOCTYPE HTML>
-<html class="no-js">
-<head>
-    <meta charset="utf-8" />
-    <title>News On Location - Demo</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />    
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+  <head>
+    <title>NEWS ON LOCATION</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta http-equiv="cleartype" content="on">
-    
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch/apple-touch-icon-114x114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch/apple-touch-icon-72x72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="img/touch/apple-touch-icon-57x57-precomposed.png">
-    <link rel="shortcut icon" href="img/touch/apple-touch-icon.png">
+    <meta name="keywords" content="News, Geolocation, Geo positioning" />
+    <meta name="description" content="News on Location geo location app demo" />
+    <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+    <meta name="DC.title" content="News on Location" />
+    <meta name="DC.subject" content="Geolocation;Geo positioning" />
+    <meta name="DC.description" content="News on Location geo location app demo" />
+    <meta name="DC.creator" content="BBG - Office of Design and Digital Innovation " />
+    <meta name="DC.language" content="en" />
 
-    <!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
+    <!-- iOS Device Startup Images -->
+    <!-- iPhone/iPod Touch Portrait Ð 320 x 460 (standard resolution) -->
+    <link rel="apple-touch-startup-image" href="img/icons/splash-screen-320x460.png" media="screen and (max-device-width: 320px)" />
+    <!-- iPhone/iPod Touch Portrait Ð 640 x 920 pixels (high-resolution) -->
+    <link rel="apple-touch-startup-image" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" href="img/icons/splash-screen-640x920.png" />
+    <!-- For iPad Landscape 1024x748 -->
+    <link rel="apple-touch-startup-image" sizes="1024x748" href="img/icons/splash-screen-1024x748.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)" />
+    <!-- For iPad Portrait 768x1004 -->
+    <link rel="apple-touch-startup-image" sizes="768x1004" href="img/icons/splash-screen-768x1004.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)"/>
+    <!-- iPad (Retina, portrait) -->
+    <link href="img/icons/apple-touch-startup-image-1536x2008.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"/>
+
+    <link rel="apple-touch-icon" sizes="80x80" href="img/icons/DCicon80.png" />
+    <link rel="apple-touch-icon" href="img/icons/DCicon57.png" sizes="57x57" />
+    <link rel="apple-touch-icon" href="img/icons/DCicon114.png" sizes="114x114" />
+    <link rel="apple-touch-icon" href="img/icons/DCicon72.png" sizes="72x72" />
+    <link rel="apple-touch-icon-precomposed" sizes="android-only" href="img/icons/DCicon57.png" />
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/ui-lightness/jquery-ui.css" />
+    <link type="text/css" rel="stylesheet" href="css/960/min/960.css" />
+    <link type="text/css" rel="stylesheet" href="css/960/min/960_16_col.css" />
+    <link type="text/css" rel="stylesheet" href="css/normalize/min/normalize.css" />
+    <link type="text/css" rel="stylesheet" href="css/prettify/min/prettify.css" />
+    <link type="text/css" rel="stylesheet" href="css/styles.css" />
+        
+    
+  </head>
+  <body>
+    
+    <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+    <![endif]-->
+    
+    
+    <!-- Splash Page -->
+    <div data-role="page" data-id="splash-page" id="splash-page" data-fullscreen="false">
+	<div data-role="header" class="header" data-id="header" data-position="fixed" data-tap-toggle="false">
+	    <h1><img src="img/nol-banner.png" class="brand" alt="News on Location" title="News on Location" /></h1>
+	</div>
+	<div data-role="content" id="splash-content">
+	    <img src="img/nol-splash.png" style="width:100%" />		
+	    <div class="welcome-geo-msg"></div>
+        </div>
+        
+	<div data-role="footer" class="footer" data-id="footer" data-position="fixed" data-tap-toggle="false">
+	    <div data-role="navbar">
+		<ul>
+		    <li><a href="#collections-page" data-role="button" data-icon="arrow-r" data-iconpos="right" data-prefetch="true" data-transition="slide">View Collections</a></li>
+		</ul>
+	    </div><!-- /navbar -->
+	</div><!-- /footer -->
+    </div> <!-- /#splah-page -->
+    
+    
+    <!-- Collections Page -->
+    <div data-role="page" data-id="collections-page" id="collections-page" data-add-back-btn="true" data-back-btn-text="Back" data-fullscreen="false">
+	<div data-role="header" class="header" data-id="header" data-position="fixed" data-tap-toggle="false">
+	    <h1><img src="img/nol-banner.png" class="brand" alt="News on Location" title="News on Location" /></h1>
+	</div>
+	<div data-role="content" id="collections-content">
+	    <!-- collections list -->
+	    <ul id="collections-list" data-role="listview" data-theme="c" data-corners="false" data-filter="true" data-inset="true">
+		<li><p>Sorry, no collections found.</p></li>
+	    </ul>
+        </div>
+        
+    </div> <!-- /#collections-page -->
+
+
+    
+    <!-- Map Page -->
+    <div data-role="page" data-id="map-page" id="map-page" data-add-back-btn="true" data-back-btn-text="Back" data-fullscreen="false">
+	<div data-role="header" class="header" data-id="header" data-position="fixed" data-tap-toggle="false">
+	    <h1><img src="img/nol-banner.png" class="brand" alt="News on Location" title="News on Location" /></h1>
+	    <a data-icon="refresh" class="refresh-btn">Refresh</a>
+	</div>
+	<div data-role="content" id="map-content">
+	    <!-- map container -->
+            <div id="map_canvas"></div>
+        </div>
+        
+	<div data-role="footer" class="footer" data-id="footer" data-position="fixed" data-tap-toggle="false">
+	    <div data-role="navbar">
+		<ul>
+		    <li><a href="#map-page" data-icon="home" data-prefetch="false" data-ajax="false" class="ui-btn-active ui-state-persist">Map</a></li>
+		    <li><a href="#stories-page" data-icon="grid" data-prefetch="true" data-transition="fade">Stories</a></li>
+		    <li><a href="#social-page" data-icon="star" data-prefetch="true" data-transition="fade">Social</a></li>
+		    <li><a href="#about-page" data-icon="info" data-prefetch="true" data-transition="fade">About</a></li>
+		</ul>
+	    </div><!-- /navbar -->
+	</div><!-- /footer -->
+    </div> <!-- /#map-page -->
+    
+    <!-- Stories Page -->
+    <div data-role="page" data-id="stories-page" id="stories-page" data-fullscreen="false" data-dom-cache="true" data-tap-toggle="false">
+	<div data-role="header" data-id="header" data-position="fixed" class="navbar">
+	    <h1><img src="img/nol-banner.png" class="brand" alt="News on Location" title="News on Location" /></h1>
+	</div>
+	<div data-role="content" id="stories-content">
+	    <!-- stories list -->
+	    <ul data-role="listview" data-theme="c" data-corners="false" id="stories-list" data-filter="true" data-inset="true">
+		<li><p>Sorry, no results.</p></li>
+	    </ul>
+        </div>
+        
+	<div data-role="footer" data-id="footer" data-position="fixed" data-tap-toggle="false">
+	    <div data-role="navbar">
+		<ul>
+		    <li><a href="#map-page" data-icon="home" data-prefetch="false" data-ajax="false" data-transition="fade">Map</a></li>
+		    <li><a href="#stories-page" data-icon="grid" data-prefetch="true" class="ui-btn-active ui-state-persist">Stories</a></li>
+		    <li><a href="#social-page" data-icon="star" data-prefetch="true" data-transition="fade">Social</a></li>
+		    <li><a href="#about-page" data-icon="info" data-prefetch="true" data-transition="fade">About</a></li>
+		</ul>
+	    </div><!-- /navbar -->
+	</div><!-- /footer -->
+    </div> <!-- /#stories-page -->
+
+    
+    <!-- Social Page -->
+    <div data-role="page" data-id="social-page" id="social-page" data-fullscreen="false" data-tap-toggle="false">
+	<div data-role="header" data-id="header" data-position="fixed" class="navbar">
+	    <h1><img src="img/nol-banner.png" class="brand" alt="News on Location" title="News on Location" /></h1>
+	</div>
+	<div data-role="content" id="social-content">
+	    <!-- social list -->
+	    <ul data-role="listview" data-theme="c" data-corners="false" id="social-list" data-inset="true">
+		<li><p>Sorry, no results.</p></li>
+	    </ul>
+        </div>
+        
+	<div data-role="footer" data-id="footer" data-position="fixed" data-tap-toggle="false">
+	    <div data-role="navbar">
+		<ul>
+		    <li><a href="#map-page" data-icon="home" data-prefetch="false" data-ajax="false" data-transition="fade">Map</a></li>
+		    <li><a href="#stories-page" data-icon="grid" data-prefetch="true" data-transition="fade">Stories</a></li>
+		    <li><a href="#social-page" data-icon="star" data-prefetch="true" class="ui-btn-active ui-state-persist">Social</a></li>
+		    <li><a href="#about-page" data-icon="info" data-prefetch="true">About</a></li>
+		</ul>
+	    </div><!-- /navbar -->
+	</div><!-- /footer -->
+    </div> <!-- /#social-page -->
+    
+    
+    <!-- About Page -->
+    <div data-role="page" data-id="about-page" id="about-page" data-fullscreen="false" data-tap-toggle="false">
+	<div data-role="header" data-id="header" data-position="fixed" class="navbar">
+	    <h1><img src="img/nol-banner.png" class="brand" alt="News on Location" title="News on Location" /></h1>
+	</div>
+	<div data-role="content" id="about-content">
+	    <h1>About</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id diam vitae dolor aliquam ultrices. Mauris quis dolor dolor. Suspendisse scelerisque justo quis velit venenatis nec condimentum elit dignissim. Quisque blandit, magna dignissim molestie tempor, elit ligula sollicitudin urna, eu hendrerit massa mauris vel elit. Nulla commodo consequat erat nec tempor. Maecenas vitae metus dui, sit amet faucibus augue. Ut imperdiet viverra elementum. Aenean ullamcorper tortor ac lacus rutrum faucibus. Donec fringilla interdum ante quis facilisis. Morbi ultricies consectetur sem vitae mattis.</p>
+		<p>Pellentesque elit orci, hendrerit eu tempor vel, fermentum sodales felis. Suspendisse nec lectus mauris. Suspendisse vel diam ac lorem ullamcorper lacinia eget id augue. Nulla ipsum ipsum, faucibus commodo vulputate a, faucibus vel eros. Vestibulum eget nisi vel dolor blandit elementum vitae id purus. Aenean luctus porta dapibus. Praesent ac magna commodo turpis egestas venenatis quis id enim. Pellentesque vel tortor non tortor pellentesque mollis. Aenean auctor tellus vitae risus vestibulum fringilla. Vestibulum sed mi sed mi ornare varius quis sed tortor.</p>
+		<p>Proin sit amet eros id magna tincidunt sagittis. Nunc laoreet ultrices fermentum. Fusce nibh justo, elementum at ullamcorper ut, ullamcorper nec magna. Nullam sit amet augue neque, eu commodo odio. Morbi purus orci, malesuada ut consequat nec, volutpat sed nisl. Quisque faucibus ligula vitae nisl porta non molestie lacus venenatis. Curabitur ut dignissim risus. Morbi justo sem, dapibus et porta quis, porta ut sapien. Sed blandit lobortis libero in venenatis.</p>
+		<p>Aenean tincidunt elementum purus, eu luctus metus blandit sed. Ut id felis eget ante hendrerit tincidunt. Proin erat libero, dignissim vel bibendum ac, suscipit vel nunc. Maecenas ultrices lectus ut tortor pretium ornare. Phasellus pretium placerat mattis. Pellentesque eu lectus nec ligula rutrum convallis et eget eros. Aliquam varius dui id metus adipiscing scelerisque ac gravida felis. Donec id tortor diam. Suspendisse mi dui, vulputate ac volutpat a, pellentesque et risus. Donec in diam vel est faucibus adipiscing a non libero. Sed a lorem turpis, vitae fringilla enim. Proin tincidunt purus non lorem luctus bibendum. Praesent ultricies hendrerit viverra. Morbi ac sem vitae lectus ultricies dignissim. Donec ornare, ipsum sed dapibus porttitor, turpis mi rutrum purus, ut imperdiet eros nisl eget lorem.</p>
+        </div>
+        
+	<div data-role="footer" data-id="footer" data-position="fixed" data-tap-toggle="false">
+	    <div data-role="navbar">
+		<ul>
+		    <li><a href="#map-page" data-icon="home" data-prefetch="false" data-ajax="false" data-transition="fade">Map</a></li>
+		    <li><a href="#stories-page" data-icon="grid" data-prefetch="true" data-transition="fade">Stories</a></li>
+		    <li><a href="#social-page" data-icon="star" data-prefetch="true">Social</a></li>
+		    <li><a href="#about-page" data-icon="info" data-prefetch="true" class="ui-btn-active ui-state-persist">About</a></li>
+		</ul>
+	    </div><!-- /navbar -->
+	</div><!-- /footer -->
+    </div> <!-- /#about-page -->
+    
+    
+    <!-- Detail Page -->
+    <div data-role="page" data-id="detail-page" id="detail-page" data-add-back-btn="true" data-back-btn-text="Back" data-fullscreen="false" data-tap-toggle="false">
+	<div data-role="header" data-id="header" data-position="fixed" class="navbar">
+	    <a data-role="button" data-direction="reverse" data-rel="back" data-transition="slide" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left">
+		Back
+	    </a>
+	    <h1><img src="img/nol-banner.png" class="brand" alt="News on Location" title="News on Location" /></h1>
+	</div>
+	<div data-role="content" id="detail-content">
+	    <p>Sorry, content not found.</p>
+        </div>
+        
+	<div data-role="footer" data-id="footer" data-position="fixed" data-tap-toggle="false">
+	    <div data-role="navbar">
+		<ul>
+		    <li><a href="#map-page" data-prefetch="false" data-ajax="false" data-transition="fade">Map</a></li>
+		    <li><a href="#stories-page" data-prefetch="true" data-transition="fade">Stories</a></li>
+		    <li><a href="#social-page" data-prefetch="true" data-transition="fade">Social</a></li>
+		    <li><a href="#about-page" data-icon="info" data-prefetch="true" data-transition="fade">About</a></li>
+		</ul>
+	    </div><!-- /navbar -->
+	</div><!-- /footer -->
+    </div> <!-- /#detail-page -->
+
     <!--
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    Include the maps javascript with sensor=true because this code is using a
+    sensor (a GPS locator) to determine the user's location.
+    See: https://developers.google.com/apis/maps/documentation/javascript/basics#SpecifyingSensor
     -->
+    <script src="js/map-styles.js" type="application/javascript"></script>
+    <!-- Maps API v3 "Simple API Access" -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCEv5ymYXgNii-izg3wwSOEcieD3b5LTyU&sensor=true"></script>
+    <!-- google maps "infoBox" plugin v3 : http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/docs/reference.html -->
+    <script src="js/infobox.min.js"></script>
+    <!-- maps extensions -->
+    <script src="js/maps.google.polygon.containsLatLng.js"></script>
 
-    <!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 -->
-    <!--
-    <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
-    -->
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+    <!-- <script src="js/jquery/jquery.ui.map.full.min.js"></script>  -->
+    <script src="js/underscore.js"></script>
+    <script src="js/underscore.string.min.js"></script>
+    <script src="js/nol.js"></script>
 
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
-    <script src="js/vendor/modernizr-2.6.1.min.js"></script>
-    
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/add2home.css">
-    
-    <script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
-    <script src="js/add2home.js" charset="utf-8"></script>
     <!--[if IE]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
-    
-    <!-- "Add to Home Page" Iphone/Ipad message -->
-    <script type="text/javascript">
-        var addToHomeConfig = {
-                touchIcon: true,
-                animationIn: 'drop',
-                startDelay: 100
-        };
-	
-        //clean the local store
-        localStorage.clear();
-	navigator.geolocation.getCurrentPosition(success, fail);
-        //display geo location message
-	
-	function success(position){
-	  msg = '<p>Welcome to the Secret Smithsonian Demo. Geo Location is enabled</p>';
-	}
-	function fail(){
-	  msg = '<p>Could not find your location! You must "allow" geo location for this app to work properly.</p>';
-	}
-	jQuery(document).ready(function(){
-	    jQuery('.welcome-geo-msg').html(msg);
-	});
-
-	
-    </script>
-	
-    
-</head>
-
-<body>
-
-    
-<!-- Welcome Page -->
-
-    <section id="page">
-        <article id="map-page-welcome">
-            <div class="welcome-geo-msg"></div>
-            <a href="map.html" class="mobile-large-btn shadow">Continue to the map!</a>
-           <!-- <img src="images/nol-splash.png" /> -->
-        </article>    
-    </section>
-    
-
-    <script src="js/vendor/zepto.min.js"></script>
-    <script src="js/helper.js"></script>
 
 
-</body>
+        
+  </body>
 </html>
-

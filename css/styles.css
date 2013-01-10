@@ -1,24 +1,36 @@
-body{
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    padding: 0;
-    margin: 0;
-    background: #000;
+html, body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
-html, body, article {
-    height: 100%;
+
+#map_canvas {
+  height: 100%;
+  width: 100%;
 }
+
+#map-page{
+    width:100%;
+    height:100%;
+}
+
+@media print {
+  html, body {
+    height: auto;
+  }
+
+  #map_canvas {
+    height: 650px;
+  }
+}
+
 section#page{
     position: relative;
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
-}
-header#app-header{
-    background-color: #111;
-    width: 100%;
-    min-height: 60px;
-    color:#FFF;
 }
 
 header#app-header a.refresh-btn{
@@ -27,12 +39,6 @@ header#app-header a.refresh-btn{
     left: 0;
     margin: 15px;
     cursor: pointer;
-}
-header#app-header select#map-select{
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 15px;
 }
 header#app-header img.banner{
     margin: 0 auto;
@@ -68,60 +74,15 @@ div.loading img {
     -webkit-box-shadow: 5px 5px 5px #999; 
     box-shadow: 5px 5px 5px #999;
 }
-.mobile-btn{}
-.mobile-large-btn{
-    display: block;
-    position: relative;
-    top: 10px;
-    margin: 0 auto;
-    padding: 10px;
-    background: #EFEFEF;
-    color: #000;
-    text-align: center;
-}
-/* ** Custom text ** */
-.youarehere, .unlock{
-    font-size:larger;
-    font-weight: bold;
-}
-.youarehere{
-    color:#41A82F;
-}
-.unlock{
-    color:#F0D7A8;
-}
 
-/* Splash page */
-article#map-page-welcome{
-    background: url('../images/nol-splash.png') no-repeat center #FFFFFF;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-article#map-page-welcome h1{
-    background-color: #ABD5F7;
-    font-weight: normal;
-    letter-spacing: -0.05em;
-    font-size: 3em;
-    font-family: Helvetica, Verdana, sans-serif;
-    display: block;
-    text-align: center;
-    text-transform: uppercase;
-    color: #FFF;
-    text-shadow: 0 1px 0 #000;
-    margin: auto; 
-}
 article#map-page-welcome .welcome-geo-msg{
     text-shadow: none;
     color: #FFF;
 }
 
 
-/* "Feature Dialog" */
-.feture-dialog section.alert{
-}
-.feature-dialog{
+/* "InfoBox" */
+.infoBox{
     background-color: #EFEFEF;
     border:1px solid #CCC;
     color:#000;
@@ -139,36 +100,12 @@ article#map-page-welcome .welcome-geo-msg{
     -webkit-box-shadow: 0 0 10px #000;
     box-shadow: 0 0 10px #000;
 }
-.feature-dialog header h1{
+.infoBox header h1{
     color:#000;
     font-weight: bold;
 }
-.feature-dialog article.feature-content{
-    max-height: 450px;
-    overflow: auto;
-    
-}
-.feature-dialog article.feature-content.alert h1{
-    background: url("../images/icons/30-key.png") no-repeat center left;
-    min-height: 25px;
-    padding-left: 20px;
-}
-.feature-dialog article.feature-content div.feature-html{
-    margin-bottom: 10px;
-}
 
-.feature-dialog h3 a{
-    font-size: smaller;
-    font-color: #FFF;
-    font-weight: normal;
-    text-decoration: none;
+.youarehere{
+    color: #41A82F;
+    font-weight: bold;
 }
-.feature-dialog a.close-btn{
-    display: block;
-    position: relative;
-}
-.feature-dialog a.close-btn img{
-    position: absolute;
-    right: 0;
-}
-

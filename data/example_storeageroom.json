@@ -1,0 +1,66 @@
+{
+   "array":{
+      "@total_resources":3,
+      "@pages":1,
+      "@page":1,
+      "@per_page":20,
+      "@url":"http://api.storageroomapp.com/accounts/50292cbb0f66027a9d0001e6/collections/50292e380f660208b60000cd/entries",
+      "@type":"Array",
+      "resources":[
+         {
+            "@type":"LocationNews",
+            "@url":"http://api.storageroomapp.com/accounts/50292cbb0f66027a9d0001e6/collections/50292e380f660208b60000cd/entries/503e5c210f66022df0000b73",
+            "@collection_url":"http://api.storageroomapp.com/accounts/50292cbb0f66027a9d0001e6/collections/50292e380f660208b60000cd",
+            "@version":11,
+            "@trash":false,
+            "@created_at":"2012-08-29T18:14:57Z",
+            "@updated_at":"2012-09-04T17:38:54Z",
+            "map":"News",
+            "title":"Native American Museum",
+            "html":"",
+            "code":"<iframe width=\"420\" height=\"315\" src=\"http://www.youtube.com/embed/KBdo3fKsu4Y\" frameborder=\"0\" allowfullscreen></iframe>",
+            "location":{
+               "@type":"Location",
+               "lat":38.8883,
+               "lng":-77.0167
+            }
+         },
+         {
+            "@type":"LocationNews",
+            "@url":"http://api.storageroomapp.com/accounts/50292cbb0f66027a9d0001e6/collections/50292e380f660208b60000cd/entries/503e5cbd0f66023e920000b2",
+            "@collection_url":"http://api.storageroomapp.com/accounts/50292cbb0f66027a9d0001e6/collections/50292e380f660208b60000cd",
+            "@version":10,
+            "@trash":false,
+            "@created_at":"2012-08-29T18:17:33Z",
+            "@updated_at":"2012-09-04T17:39:26Z",
+            "map":"News",
+            "title":"Air and Space",
+            "html":"",
+            "code":"<iframe width=\"420\" height=\"315\" src=\"http://www.youtube.com/embed/-3kDEa-I94Y\" frameborder=\"0\" allowfullscreen></iframe>\r\n",
+            "location":{
+               "@type":"Location",
+               "lat":38.88815031881352,
+               "lng":-77.01904210052487
+            }
+         },
+         {
+            "@type":"LocationNews",
+            "@url":"http://api.storageroomapp.com/accounts/50292cbb0f66027a9d0001e6/collections/50292e380f660208b60000cd/entries/5088475b0f66025b0b0011c4",
+            "@collection_url":"http://api.storageroomapp.com/accounts/50292cbb0f66027a9d0001e6/collections/50292e380f660208b60000cd",
+            "@version":3,
+            "@trash":false,
+            "@created_at":"2012-10-24T19:54:03Z",
+            "@updated_at":"2012-10-24T20:06:53Z",
+            "map":"News",
+            "title":"addie",
+            "html":"<img src=\"https://www.dropbox.com/s/unp1qutiansad46/IMAG0718.jpg\" alt=\"addie\" align=\"none\"><br>",
+            "code":"",
+            "location":{
+               "@type":"Location",
+               "lat":38.9103919,
+               "lng":-77.04105800000002
+            }
+         }
+      ]
+   }
+}
